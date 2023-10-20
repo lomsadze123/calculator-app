@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  min-height: 100vh;
+  background-color: #3a4764;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body, button {
+  font-family: 'League Spartan', sans-serif;
+}

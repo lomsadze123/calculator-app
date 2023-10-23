@@ -2,26 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  min-height: 100vh;
-  background-color: #3a4764;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 body, button {
   font-family: 'League Spartan', sans-serif;
 }
-
+/* For modes */
+.bg-red {
+background-color: #3a4764;
+}
+.bg-orange {
+background-color: #e6e6e6;
+}
+.bg-aqua {
+  background-color: #160628;
+}
+.calc-red {
+  background-color: #232c43;
+}
+.calc-orange {
+  background-color: #d1cccc;
+}
+.calc-aqua {
+  background-color: #1d0934;
+}
+.result-red {
+  background-color: #182034;
+}
+.result-orange {
+  background-color: #ededed;
+}
+.result-aqua {
+  background-color: #1d0934;
+}
+.btn-red {
+  background-color: #eae3dc;
+  border-bottom-color: #b4a597;
+}
+.btn-orange {
+  background-color: #e5e4e1;
+  border-bottom-color: #a69d91;
+}
+.btn-aqua {
+  background-color: #341c4f;
+  border-bottom-color: #871c9c;
+}
+.del-red {
+  background-color: #637097;
+  border-bottom-color: #404e72;
+}
+.del-orange {
+  background-color: #377f86;
+  border-bottom-color: #1b5f65;
+}
+.del-aqua {
+  background-color: #58077d;
+  border-bottom-color: #bc15f4;
+}
+.equal-red {
+  background-color: #d03f2f;
+  border-bottom-color: #93261a;
+}
+.equal-orange {
+  background-color: #ca5502;
+  border-bottom-color: #893901;
+}
+.equal-aqua {
+  background-color: #00e0d1;
+  border-bottom-color: #6cf9f2;
+  color: black;
+}
+.f-red-f {
+  color: #eae3dc;
+}
+.f-orange-f {
+  color: #35352c;
+}
+.f-aqua-f {
+  color: #ffe53d;
+}
 .f-red {
-  color: #d03f2f;
+  color: #444b5a;
 }
-
 .f-orange {
-  color: #ca5502;
+  color: #35352c;
 }
-
 .f-aqua {
-  color: #00e0d1;
+  color: #ffe53d;
 }

@@ -5,38 +5,26 @@ function App() {
   const [mode, setMode] = useState("red");
   const storage = localStorage.getItem("mode");
 
-  // if (storage !== null) {
-  //   localStorage.setItem("mode", "red");
-  // }
-
   useEffect(() => {
     storage && setMode(storage);
   }, []);
 
+  const colors = ["red", "orange", "aqua"];
+
   const handleSwitch = (number: number) => {
-    switch (number) {
-      case 1:
-        localStorage.removeItem("mode");
-        localStorage.setItem("mode", "red");
-        setMode("red");
-        break;
-      case 2:
-        localStorage.removeItem("mode");
-        localStorage.setItem("mode", "orange");
-        setMode("orange");
-        break;
-      case 3:
-        localStorage.removeItem("mode");
-        localStorage.setItem("mode", "aqua");
-        setMode("aqua");
-        break;
+    if (number >= 1 && number <= colors.length) {
+      const selectedColor = colors[number - 1];
+      localStorage.setItem("mode", selectedColor);
+      setMode(selectedColor);
     }
   };
 
   return (
-    <>
+    <div
+      className={`bg-${mode} w-full min-h-screen flex justify-center items-center`}
+    >
       <Main handleSwitch={handleSwitch} mode={mode} />
-    </>
+    </div>
   );
 }
 

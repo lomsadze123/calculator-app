@@ -5,26 +5,41 @@ const Header = ({
   handleSwitch: (number: number) => void;
   mode: string;
 }) => {
-  const check =
-    mode === "red"
-      ? "#d03f2f"
-      : "" || mode === "orange"
-      ? "#ca5502"
-      : "#ca5502" || mode === "aqua"
-      ? "#00e0d1"
-      : "";
-  const adder = mode === "orange" ? 20 : 0 || mode === "aqua" ? 40 : 0;
+  const themes = [
+    {
+      mode: "red",
+      circle: "#d03f2f",
+      rect: "#232c43",
+      adder: 0,
+    },
+    {
+      mode: "orange",
+      circle: "#ca5502",
+      rect: "#d1cccc",
+      adder: 20,
+    },
+    {
+      mode: "aqua",
+      circle: "#00e0d1",
+      rect: "#1d0934",
+      adder: 40,
+    },
+  ];
+
+  const selectedTheme = themes.find((theme) => theme.mode === mode);
 
   return (
     <header className="flex justify-between items-center mb-8">
-      <h1 className="text-[40px] text-[#eae3dc] tracking-wider">calc</h1>
+      <h1 className={`text-[40px] f-${mode}-f tracking-wider`}>calc</h1>
       <div>
         <div className="flex items-end gap-3">
-          <h2 className="text-sm text-[#eae3dc] font-thin tracking-wider">
+          <h2 className={`text-sm f-${mode}-f font-thin tracking-wider`}>
             THEME
           </h2>
           <div>
-            <span className="flex gap-2 justify-evenly text-white text-sm text-center">
+            <span
+              className={`flex gap-2 justify-evenly f-${mode}-f text-sm text-center`}
+            >
               {[1, 2, 3].map((number) => (
                 <p
                   onClick={() => handleSwitch(number)}
@@ -42,13 +57,19 @@ const Header = ({
               viewBox="0 0 64 22"
               fill="none"
             >
-              <rect y="1" width="64" height="23" rx="10" fill="#232c43" />
+              <rect
+                y="1"
+                width="64"
+                height="23"
+                rx="10"
+                fill={selectedTheme && selectedTheme.rect}
+              />
               <circle
                 className="duration-300"
-                cx={`${12 + adder}`}
+                cx={`${selectedTheme && 12 + selectedTheme.adder}`}
                 cy="12"
                 r="8"
-                fill={check}
+                fill={selectedTheme && selectedTheme.circle}
               />
             </svg>
           </div>

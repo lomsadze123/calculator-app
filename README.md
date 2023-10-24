@@ -1,6 +1,6 @@
 # Calculator App
 
-The Calculator App is a simple web-based calculator that allows users to perform basic mathematical operations such as addition, subtraction, multiplication, and division. It also provides a user-friendly interface with different color themes.
+The Calculator App is a simple web-based calculator that allows users to perform basic mathematical operations such as addition, subtraction, multiplication, and division. It also provides a user-friendly interface with different color (3) themes.
 
 ## Setup
 
